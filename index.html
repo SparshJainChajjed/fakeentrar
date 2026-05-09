@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sparsh Robotics • Portfolio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="images/avatar.png">
+<style>
+    /* bump all text 8% */
+    html { font-size:108%; }
+    /* increase all text by 8% */
+    html { font-size: 108%; }
+
+/* VS Code dark‑blue palette */
+:root {
+--bg:#0d1117; --panel:#1e2a3a; --accent:#388bfd;
+--text:#d4d4d4; --string:#ce9178; --comment:#6a9955; --key:#9cdcfe;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:Segoe UI,Roboto,Arial,sans-serif; line-height:1.6; }
+    body { background:var(--bg); color:var(--text); font-family:Segoe UI,Roboto,Arial,sans-serif; line-height:1.6; }
+a { color:var(--accent); text-decoration:none; }
+
+/* NAV */
+nav {
+position:sticky; top:0; z-index:10;
+display:flex; justify-content:flex-end; gap:1rem;
+background:var(--panel); padding:1rem 1.5rem;
+      box-shadow:0 3px 6px rgba(0,0,0,.5);
+      box-shadow:0 3px 6px rgba(0,0,0,.5);
+}
+nav a {
+      padding:.6rem 1.2rem; border:2px solid var(--accent);
+      padding:.6rem 1.2rem; border:2px solid var(--accent);
+border-radius:6px; font-weight:600; font-size:1.1rem;
+transition:.2s;
+}
+nav a:hover, nav a.active { background:var(--accent); color:#fff; }
+
+    /* HERO – text flush left, image pushed right */
+    /* HERO */
+.hero {
+      display:flex; align-items:center;
+      justify-content:flex-start; gap:4rem;
+      padding:4rem 1rem; min-height:80vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:0;                          /* no gap */
+      padding:4rem clamp(1rem,6vw,4rem);
+      min-height:80vh;
+}
+.hero__text {
+      max-width:50%; text-align:left;
+      flex:1; max-width:50%;
+}
+.hero h1 {
+font-size:clamp(2.5rem,6vw,4.5rem);
+font-weight:800; color:#fff; line-height:1.1;
+}
+    .orange { color:#ffa657; } .purple { color:#c586c0; }
+    .orange { color:#ffa657 } .purple { color:#c586c0 }
+.hero p {
+      margin:1.5rem 0 2rem; font-size:clamp(1.4rem,3vw,2rem); color:#ddd;
+      margin:1.5rem 0 2rem; font-size:clamp(1.4rem,3vw,2rem); color:#ddd;
+}
+.btn {
+display:inline-flex; align-items:center; gap:.6rem;
+background:var(--accent); color:#fff; border:none; border-radius:50px;
+      padding:1rem 2rem; font-size:1.2rem; font-weight:600;
+      padding:1rem 2rem; font-size:1.2rem; font-weight:600;
+cursor:pointer; transition:.2s;
+}
+.btn:hover { opacity:.9; transform:translateY(-1px); }
+
+    /* AVATAR – 25% up, further from text */
+    /* AVATAR – 25% larger & flush to text */
+.avatar {
+      width:550px; aspect-ratio:1/1; border-radius:50%; overflow:hidden;
+      margin-left:6rem; flex-shrink:0;
+      width:550px; /* 25% larger */
+      aspect-ratio:1/1; border-radius:50%; overflow:hidden;
+      margin-left:0; /* flush */
+      flex-shrink:0;
+}
+.avatar img { width:100%; height:100%; object-fit:cover; }
+
+/* ABOUT */
+#about {
+      max-width:800px; margin:2rem auto; padding:0 1rem;
+      max-width:800px; margin:2rem auto; padding:0 1rem;
+font-size:1.8rem; white-space:pre-wrap;
+}
+.string{color:var(--string)} .comment{color:var(--comment)} .key{color:var(--key)}
+
+/* SPACER */
+    #spacer { height:100vh; }
+    #spacer{height:100vh}
+
+    /* ACHIEVEMENTS (hidden until click) */
+    /* ACHIEVEMENTS (hidden) */
+#achievements {
+display:none;
+      max-width:800px; margin:0 auto; padding:3rem 1rem 5rem;
+      max-width:800px; margin:0 auto; padding:3rem 1rem 5rem;
+}
+#achievements h2 {
+text-align:center; color:var(--accent); font-size:2.5rem; margin-bottom:2rem;
+}
+.stats {
+      display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-bottom:3rem;
+      display:flex; flex-wrap:wrap; gap:2rem;
+      justify-content:center; margin-bottom:3rem;
+}
+.stat {
+      background:var(--panel); padding:1.5rem 2rem;
+      background:var(--panel); padding:1.5rem 2rem;
+border-radius:8px; min-width:180px; text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,.4);
+      box-shadow:0 4px 10px rgba(0,0,0,.4);
+}
+    .stat-label{display:block; font-size:1rem; margin-bottom:.3rem;}
+    .stat-number{font-size:2.4rem; font-weight:700; color:#fff;}
+    #achievements h3{color:var(--accent); font-size:1.6rem; margin:1.2rem 0 .5rem;}
+    #achievements p{font-size:1.1rem; margin-bottom:.8rem;}
+    .stat-label{display:block;font-size:1rem;margin-bottom:.3rem}
+    .stat-number{font-size:2.4rem;font-weight:700;color:#fff}
+    #achievements h3{color:var(--accent);font-size:1.6rem;margin:1.2rem 0 .5rem}
+    #achievements p{font-size:1.1rem;margin-bottom:.8rem}
+
+    footer { height:6vh; }
+    footer{height:6vh}
+</style>
+</head>
+<body id="top">
+
+  <!-- NAV -->
+<nav>
+<a href="#" id="homeLink" class="active">HOME</a>
+<a href="#achievements" id="achLink">MY ACHIEVEMENTS</a>
+</nav>
+
+  <!-- HERO -->
+<section class="hero">
+<div class="hero__text">
+<h1>Hi There,<br>I'm <span class="orange">Sparsh Jain</span></h1>
+<p>I am into <span class="purple">embedded engineering</span></p>
+<button class="btn" id="aboutBtn">About Me ↓</button>
+</div>
+<div class="avatar">
+      <img src="images/avatar.png" alt="Cartoon Sparsh waving"/>
+      <img src="images/avatar.png" alt="Cartoon Sparsh waving">
+</div>
+</section>
+
+  <!-- ABOUT (typing) -->
+<section id="about"></section>
+
+  <!-- SPACER -->
+<div id="spacer"></div>
+
+  <!-- ACHIEVEMENTS -->
+<section id="achievements">
+<h2>My Achievements</h2>
+<div class="stats">
+@@ -162,7 +174,7 @@
+Sparsh Jain secured 2nd place in the RoboMission Category at the World Robotics Olympiad Championship, organized by the India STEM Foundation. This prestigious competition celebrated innovation and problem‑solving in robotics, and Sparsh’s performance highlighted technical skill, creativity, and excellence in autonomous robotics challenges.
+</p>
+
+    <h3>MCA Codenest Hackathon 2025 – Winner</h3>
+    <h3>MCA Codenest Hackathon 2025 – Winner</h3>
+<p>
+Sparsh Jain from Delhi Public School, Bangalore South secured the Winner position at the prestigious MCA Codenest Hackathon held on 1st February 2025. The event brought together some of the brightest young minds to compete in high‑pressure coding and problem‑solving challenges. Sparsh’s exceptional skills and innovative approach earned him the Certificate of Achievement, recognizing his outstanding performance in the hackathon.
+</p>
+@@ -189,7 +201,7 @@
+
+<h3>Hack 4 Humanity 2024</h3>
+<p>
+      Sparsh Jain from Delhi Public School, Bangalore South received an Honorable Mention in Hack 4 Humanity 2024 (judged 3rd–6th December 2024; recognized 7th December 2024) for innovative, high-impact solutions.
+      Sparsh Jain from Delhi Public School, Bangalore South received an Honorable Mention in Hack 4 Humanity 2024 (3rd–6th December 2024; results 7th December 2024) for innovative, high-impact solutions.
+</p>
+
+<h3>Fabguard Innovation Challenge</h3>
+@@ -199,7 +211,7 @@
+
+<h3>Intel AI Fest</h3>
+<p>
+      Sparsh Jain from Delhi Public School, Bangalore South successfully completed the micro-learning module on AI for Entrepreneurship by Intel, in collaboration with NITI Aayog and the Atal Innovation Mission, on 10th March 2025. The course introduced participants to the fundamentals of artificial intelligence and its practical applications in the world of entrepreneurship, equipping participants with essential 21st-century skills.
+      Sparsh Jain from Delhi Public School, Bangalore South successfully completed the micro-learning module on AI for Entrepreneurship by Intel, in collaboration with NITI Aayog and the Atal Innovation Mission, on 10th March 2025. The course introduced participants to the fundamentals of artificial intelligence and its practical applications in the world of entrepreneurship, equipping them with essential 21st-century skills.
+</p>
+
+<h3>Raman Young Science Innovator Award 2024</h3>
+@@ -214,64 +226,58 @@
+</section>
+
+<script>
+    // HOME → top
+    // HOME scroll
+document.getElementById('homeLink').onclick = e => {
+      e.preventDefault();
+      window.scrollTo({ top:0, behavior:'smooth' });
+      e.preventDefault(); window.scrollTo({ top:0, behavior:'smooth' });
+};
+
+    // ABOUT Me typing + scroll
+    // ABOUT typing + scroll
+(function(){
+      const btn = document.getElementById('aboutBtn'), sec = document.getElementById('about'),
+      const btn = document.getElementById('aboutBtn'),
+            sec = document.getElementById('about'),
+lines = [
+              '<span class="string">Hi, I\\\'m Sparsh, a 14-year-old enthusiast with a deep passion for robotics, AI, machine learning (ML), 3-D modelling and technology.</span>',
+              '<span class="string">Hi, I\\\'m Sparsh, a 14-year-old enthusiast ...</span>',
+'<span class="comment">This website is dedicated to documenting my projects, achievements and experiences.</span>',
+'<span class="key">Feel free to explore the site.</span>'
+];
+btn.onclick = () => {
+        const navH = document.querySelector('nav').offsetHeight,
+              y    = sec.getBoundingClientRect().top + window.scrollY - navH;
+        const y = sec.getBoundingClientRect().top + scrollY - document.querySelector('nav').offsetHeight;
+window.scrollTo({ top:y, behavior:'smooth' });
+if (sec.dataset.done) return;
+let l=0,c=0;
+(function type(){
+          if (l===lines.length){ sec.dataset.done=1; return; }
+          if (c===0) sec.innerHTML += `<div id="L${l}"></div>`;
+          document.getElementById(`L${l}`).innerHTML = lines[l].slice(0, ++c);
+          if (c===lines[l].length){
+            sec.innerHTML += '<br>'; l++; c=0; setTimeout(type,350);
+          if(l===lines.length){ sec.dataset.done=1; return; }
+          if(!c) sec.innerHTML+=`<div id="L${l}"></div>`;
+          document.getElementById(`L${l}`).innerHTML=lines[l].slice(0,++c);
+          if(c===lines[l].length){
+            sec.innerHTML+='<br>'; l++; c=0; setTimeout(type,350);
+} else setTimeout(type,35);
+})();
+};
+})();
+
+    // ACHIEVEMENTS reveal + animate
+    // ACHIEVEMENTS reveal + counters
+(function(){
+      const link = document.getElementById('achLink'), ach = document.getElementById('achievements');
+      let started = false;
+      link.onclick = e => {
+      const link=document.getElementById('achLink'), ach=document.getElementById('achievements');
+      let started=false;
+      link.onclick=e=>{
+e.preventDefault();
+        ach.style.display = 'block';
+        const navH = document.querySelector('nav').offsetHeight,
+              y    = ach.getBoundingClientRect().top + window.scrollY - navH;
+        ach.style.display='block';
+        const y=ach.getBoundingClientRect().top+scrollY-document.querySelector('nav').offsetHeight;
+window.scrollTo({ top:y, behavior:'smooth' });
+        if (!started) {
+          started = true;
+          document.querySelectorAll('.stat-number').forEach(el => {
+            const target    = +el.getAttribute('data-target'),
+                  duration  = 3000,
+                  frameRate = 30,
+                  total     = Math.ceil(duration/frameRate);
+            let frame = 0;
+            const timer = setInterval(()=>{
+              frame++;
+              el.textContent = Math.round(target * (frame/total));
+              if (frame>=total){ clearInterval(timer); el.textContent=target; }
+            }, frameRate);
+        if(!started){
+          started=true;
+          document.querySelectorAll('.stat-number').forEach(el=>{
+            const target=+el.dataset.target, dur=3000, fr=30, tot=Math.ceil(dur/fr);
+            let f=0;
+            const t=setInterval(()=>{
+              f++; el.textContent=Math.round(target*(f/tot));
+              if(f>=tot){ clearInterval(t); el.textContent=target; }
+            },fr);
+});
+}
+};
+})();
+</script>
+</body>
+</html>
